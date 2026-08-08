@@ -1,0 +1,44 @@
+### GET /
+GET http://localhost:3000
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "secure"
+  }
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "secure"
+}
+
+###
+GET http://localhost:3000/todos
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg2MjA0NzE0LCJleHAiOjE3ODYyOTExMTR9.ZLCWvFdN8rnjIce8Fl9LKE0mCk3CNxrqzVC2meh6kQs
+
+#### 
+POST http://localhost:3000/todos
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg2MjA0NzE0LCJleHAiOjE3ODYyOTExMTR9.ZLCWvFdN8rnjIce8Fl9LKE0mCk3CNxrqzVC2meh6kQs
+Content-Type: application/json
+
+{
+  "task": "Buy groceries"
+}
+### update a specific todo for a specific user(put request is used to modify a specific resource)
+PUT http://localhost:3000/todos/2?page=4
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg2MjA0NzE0LCJleHAiOjE3ODYyOTExMTR9.ZLCWvFdN8rnjIce8Fl9LKE0mCk3CNxrqzVC2meh6kQs
+Content-Type: application/json
+
+{
+  "completed": 1
+}
+###delete a specific todo for a specific user
+DELETE http://localhost:3000/todos/2
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg2MjA0NzE0LCJleHAiOjE3ODYyOTExMTR9.ZLCWvFdN8rnjIce8Fl9LKE0mCk3CNxrqzVC2meh6kQs
